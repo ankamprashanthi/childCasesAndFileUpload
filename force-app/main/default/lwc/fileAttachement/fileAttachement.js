@@ -3,6 +3,7 @@ import { LightningElement,api } from 'lwc';
 
 export default class FileAttachement extends LightningElement {
     @api recordId;
+      @api fileCount;
      acceptedFormats = ['.pdf','.png','.jpg','.jpeg'];
      handleUploadFinished(event){
          const uploadedFiles = event.detail.files;

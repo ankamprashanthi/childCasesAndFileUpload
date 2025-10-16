@@ -1,7 +1,9 @@
 <template> 
     
 
-    <c-file-attachement record-id={recordId}
+    <c-file-attachement 
+    record-id={recordId}
+    file-count={fileCount}
     onfilerefresh={handleRefresh}></c-file-attachement>
 
     
@@ -9,10 +11,6 @@
         <template for:each={files} for:item="file"> 
             <div key={file.versionId} class="slds-box slds-m-bottom_small"> 
                 <p><strong>{file.title}</strong></p> 
-                <!--<lightning-button label="Preview"
-                 data-id={file.versionId}
-                 onclick={handlePreview}>
-                 </lightning-button> -->
                  <lightning-button label="Preview"
     data-id={file.contentDocumentId}
     onclick={handlePreview}>

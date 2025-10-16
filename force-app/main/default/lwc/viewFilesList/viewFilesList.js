@@ -51,4 +51,7 @@ handlePreview(event) {
              //this.template.querySelector('c-child-case-file-list')?.refreshFiles(); 
              this.refreshFiles();
             }
+            get fileCount() {
+    return this.files.length;
+}
          }
