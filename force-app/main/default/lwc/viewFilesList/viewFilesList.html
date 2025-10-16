@@ -1,11 +1,9 @@
 <template> 
     
 
-    <c-file-attachement
-    record-id={childCaseId}
-    parent-case-id={parentCaseId}
-    onfilerefresh={handleChildUploadRefresh}>
-  </c-file-attachement>
+    <c-file-attachement record-id={recordId}
+    onfilerefresh={handleRefresh}></c-file-attachement>
+
     
     <template if:true={files.length}> 
         <template for:each={files} for:item="file"> 

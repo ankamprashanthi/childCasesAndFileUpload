@@ -47,7 +47,4 @@ public with sharing class CaseController {
             this.contentDocumentId = contentDocumentId;
         }
     }
-
-   
-
 }
