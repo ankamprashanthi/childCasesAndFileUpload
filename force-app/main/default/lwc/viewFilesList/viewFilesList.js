@@ -51,4 +51,8 @@ handlePreview(event) {
              //this.template.querySelector('c-child-case-file-list')?.refreshFiles(); 
              this.refreshFiles();
             }
-         }
+            handleChildUploadRefresh() {
+    // when child upload finishes, reload parent files
+    this.loadParentFiles();
+  }
+}

@@ -48,5 +48,24 @@ public with sharing class CaseController {
         }
     }
 
+    @AuraEnabled
+public static void shareFileWithParentCase(Id parentCaseId, Id contentDocumentId) {
+    List<ContentDocumentLink> existingLinks = [
+            SELECT Id
+            FROM ContentDocumentLink
+            WHERE LinkedEntityId = :parentCaseId
+            AND ContentDocumentId = :contentDocumentId
+        ];
+        if (existingLinks.isEmpty()) {
+            ContentDocumentLink link = new ContentDocumentLink(
+                LinkedEntityId = parentCaseId,
+                ContentDocumentId = contentDocumentId,
+                ShareType = 'V',
+                Visibility = 'AllUsers'
+            );
+            insert link;
+        }
+}
+
 
 }
