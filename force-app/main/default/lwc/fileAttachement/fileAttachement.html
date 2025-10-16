@@ -1,0 +1,36 @@
+<template>
+    <div style="border: 1px solid #d8dde6;" class="slds-theme_shade">
+    <div class="slds-related-list__header slds-grid slds-grid_align-spread slds-p-around_small slds-theme_shade">
+            <div class="slds-media slds-media_center slds-theme_shade">
+              <div class="slds-media__figure">
+                    <lightning-icon icon-name='standard:document' alternative-text='document' class="slds-m-right_small" title='document'></lightning-icon>
+    
+              </div>
+              <div class="slds-media__body">
+                  <h2 class="slds-text-heading_small slds-truncate" title="Attachments" ><p><b>Attachments</b></p></h2>
+             </div>  
+             </div> 
+             
+            <div class="slds-theme_shade slds-border">
+                <lightning-button-group>
+                <lightning-button label="Upload Files" 
+                title="Non-primary action" 
+                 ></lightning-button>
+                </lightning-button-group>   
+            
+           </div>
+        
+        </div>
+        <div class="slds-grid slds-grid_align-center">
+            <div class="slds-file-selector slds-file-selector_files slds-has-focus" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+    <lightning-file-upload
+        name="fileUploader"
+        accept={acceptedFormats}
+        record-id={recordId}
+        onuploadfinished={handleUploadFinished}
+        multiple>
+    </lightning-file-upload>
+      </div>
+      </div>
+        </div>
+</template>

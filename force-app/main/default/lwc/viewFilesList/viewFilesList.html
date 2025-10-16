@@ -1,0 +1,31 @@
+<template> 
+    <c-file-attachement
+      record-id={recordId}
+    onfilerefresh={handleRefresh}>
+    </c-file-attachement>
+    
+    <template if:true={files.length}> 
+        <template for:each={files} for:item="file"> 
+            <div key={file.versionId} class="slds-box slds-m-bottom_small"> 
+                <p><strong>{file.title}</strong></p> 
+                <!--<lightning-button label="Preview"
+                 data-id={file.versionId}
+                 onclick={handlePreview}>
+                 </lightning-button> -->
+                 <lightning-button label="Preview"
+    data-id={file.contentDocumentId}
+    onclick={handlePreview}>
+</lightning-button>&nbsp; 
+                 <lightning-button label="Download"
+                 data-id={file.versionId}
+                 onclick={handleDownload}>
+                </lightning-button>
+
+            </div> 
+        </template> 
+    </template>
+    <template if:true={noFiles}>
+         <p>No files found.</p> 
+    </template> 
+    
+</template>

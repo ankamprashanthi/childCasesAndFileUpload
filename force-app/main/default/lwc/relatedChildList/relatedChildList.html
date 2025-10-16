@@ -1,0 +1,52 @@
+<template>
+  <div style="border: 1px solid #d8dde6;" >
+    <div class="slds-related-list__header slds-grid slds-grid_align-spread slds-p-around_small  slds-theme_shade">
+            <div class="slds-media slds-media_center">
+              <div class="slds-media__figure">
+                 <lightning-icon icon-name="custom:custom51" title="custom51"   class="slds-m-right_small">
+                 </lightning-icon>
+              </div>
+              <div class="slds-media__body">
+                  <h2 class="slds-text-heading_small slds-truncate" title="Child Cases"><b>Child Cases ({childCaseCount})</b> </h2>
+             </div>  
+             </div> 
+             
+           
+            <div class="slds-theme_shade  slds-border">
+                <lightning-button-group>
+                <lightning-button label="New" title="Non-primary action" ></lightning-button>
+                <lightning-button label="Edit" title="Non-primary action" ></lightning-button>
+                </lightning-button-group>   
+           </div>
+        
+        </div>
+       <!-- <template if:true={hasChildCases}>
+          <lightning-datatable
+            key-field="id"
+            data={childList}
+            columns={columns}
+            hide-checkbox-column
+          ></lightning-datatable>
+        </template>-->
+        <template if:true={hasChildCases}>
+          <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+              <thead>
+                <tr>
+                  <th class="slds-p-around_large">Child caseId</th>
+                  <th class="slds-p-around_large">Case Number</th>
+                  <th class="slds-p-around_large">ParentId</th>
+                </tr>
+              </thead>
+              <tbody>
+                <template for:each={childList} for:item="child">
+                  <tr key={child.Id}>
+                    <td>{child.Id}</td>
+                    <td><a href={child.caseUrl} target="_blank">{child.CaseNumber}</a></td>
+                    <td>{child.ParentId}</td>
+                    </tr>
+                </template>
+              </tbody>
+          </table>
+        </template>
+        </div>
+</template>
